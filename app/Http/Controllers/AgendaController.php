@@ -3,16 +3,29 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Agenda;
 
-class TesteController extends Controller
+class AgendaController extends Controller
 {
+    private $objAgenda;
+
+    public function __construct() {
+        $this->objAgenda = new Agenda();
+    }
+    
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index($id)
     {
-        return view('index');
+        $agendas = $this->objAgenda->where('medico', $id)->get();
+
+        if (!$agendas) {
+            return abort(404, 'Agenda não encontrada');
+        }
+        return view('agenda_mes', compact('agendas'));
     }
+
 
     /**
      * Show the form for creating a new resource.

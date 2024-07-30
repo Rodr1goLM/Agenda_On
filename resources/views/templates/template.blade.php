@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{{url('assets/bootstrap/css/bootstrap.min.css')}}">
     </head>
 <body>
+    <h1>Crud com Lavarel</h1>
     @yield('content')   
 </body>
 </html>

@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('nome');
             $table->string('logradouro');
             $table->string('bairro');
-            $table->integer('numero');
+            $table->string('numero');
             $table->string('cidade');
             $table->string('estado');
             $table->string('pais');

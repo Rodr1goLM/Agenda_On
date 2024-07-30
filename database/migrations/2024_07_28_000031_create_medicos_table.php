@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('nome');
             $table->string('registro');
             $table->string('cpf');
+            $table->string('especializacao');
             $table->foreignId('unidade')->constrained('unidades');
             $table->timestamps();
 

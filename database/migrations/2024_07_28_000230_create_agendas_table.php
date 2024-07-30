@@ -11,10 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('agenda', function (Blueprint $table) {
+        Schema::create('agendas', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('medico')->constrained('medicos');
-            $table->foreignId('unidade')->constrained('unidades');
+            $table->foreignId('medico')->constrained('medicos')->onDelete('cascade');
             $table->date('dia');
             $table->boolean('h_00')->default(false);
             $table->boolean('h_01')->default(false);
